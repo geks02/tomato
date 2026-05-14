@@ -4,6 +4,7 @@ import { riderService } from "../main";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { BiUpload } from "react-icons/bi";
+import { useSocket } from "../context/SocketContext";
 
 interface IRider {
   _id: string;
@@ -17,6 +18,7 @@ interface IRider {
 
 const RiderDashboard = () => {
   const { user } = useAppData();
+  useSocket();
   const [profile, setProfile] = useState<IRider | null>(null);
   const [loading, setLoading] = useState(true);
   const [toggling, setToggling] = useState(false);
