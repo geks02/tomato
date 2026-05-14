@@ -75,6 +75,43 @@ const RiderOrderMap = ({ order }: Props) => {
     order.deliveryAddress.latitude,
     order.deliveryAddress.longitude,
   ];
+  // useEffect(() => {
+  //   const fetchLocation = () => {
+  //     navigator.geolocation.getCurrentPosition(
+  //       (pos) => {
+  //         const latitude = pos.coords.latitude;
+  //         const longitude = pos.coords.longitude;
+
+  //         setRiderLocation([latitude, longitude]);
+  //         axios.post(
+  //           `${realtimeService}/api/v1/internal/emit`,
+  //           {
+  //             event: "rider:location",
+  //             room: `user:${order.userId}`,
+  //             payload: { latitude, longitude },
+  //           },
+  //           {
+  //             headers: {
+  //               "x-internal-key": import.meta.env.VITE_INTERNAL_SERVICE_KEY,
+  //             },
+  //           },
+  //         );
+  //       },
+  //       (err) => console.log("Location Error:", err),
+  //       {
+  //         enableHighAccuracy: true,
+  //         maximumAge: 5000,
+  //         timeout: 10000,
+  //       },
+  //     );
+  //   };
+  //   fetchLocation();
+  //   const interval = setInterval(fetchLocation, 10000);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, [order.userId]);
+
   useEffect(() => {
     const fetchLocation = () => {
       navigator.geolocation.getCurrentPosition(
@@ -95,7 +132,10 @@ const RiderOrderMap = ({ order }: Props) => {
                 "x-internal-key": import.meta.env.VITE_INTERNAL_SERVICE_KEY,
               },
             },
-          );
+          ).catch((err) => {
+             // ✅ FIX: Gracefully handle the 500 error so it doesn't break the app flow
+             console.log("Failed to emit location to internal service:", err.message);
+          });
         },
         (err) => console.log("Location Error:", err),
         {

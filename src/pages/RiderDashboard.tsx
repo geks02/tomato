@@ -102,7 +102,26 @@ const RiderDashboard = () => {
     }
   }, [user]);
 
-  const fetchCurrentOrder = async () => {
+  // const fetchCurrentOrder = async () => {
+  //   try {
+  //     const { data } = await axios.get(
+  //       `${riderService}/api/rider/order/current`,
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         },
+  //       },
+  //     );
+  //     setCurrentOrder(data?.order || null);
+  //   } catch (error) {
+  //     console.log(error);
+  //     setCurrentOrder(null);
+  //   }
+  // };
+  // useEffect(() => {
+  //   fetchCurrentOrder();
+  // }, []);
+const fetchCurrentOrder = async () => {
     try {
       const { data } = await axios.get(
         `${riderService}/api/rider/order/current`,
@@ -118,10 +137,13 @@ const RiderDashboard = () => {
       setCurrentOrder(null);
     }
   };
-  useEffect(() => {
-    fetchCurrentOrder();
-  }, []);
 
+  // ✅ FIX: Only fetch the current order if the user is verified as a rider
+  useEffect(() => {
+    if (user?.role === "rider") {
+      fetchCurrentOrder();
+    }
+  }, [user]);
   const toggleAvailability = async () => {
     if (!navigator.geolocation) {
       toast.error("Location Access Required");
