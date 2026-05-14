@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useAppData } from "../context/AppContext";
-import { useSocket } from "../context/SocketContext";
 import { riderService } from "../main";
 import axios from "axios";
 import toast from "react-hot-toast";
