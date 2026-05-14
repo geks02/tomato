@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { IMenuItem, IRestaurant } from "../types";
 import { restaurantService } from "../main";

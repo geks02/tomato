@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import * as L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-routing-machine";
-import axios from "axios";
 
 declare module "leaflet" {
   // eslint-disable-next-line @typescript-eslint/no-namespace

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppData } from "../context/AppContext";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { CgShoppingCart } from "react-icons/cg";

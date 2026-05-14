@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { IRestaurant } from "../types";
 import axios from "axios";
 import { restaurantService } from "../main";

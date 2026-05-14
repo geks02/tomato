@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { restaurantService } from "../main";
 import toast from "react-hot-toast";
 import { BiUpload } from "react-icons/bi";

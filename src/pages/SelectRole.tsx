@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useAppData } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -7,7 +7,7 @@ import { authService } from "../main";
 type Role = "customer" | "rider" | "seller" | null;
 
 const SelectRole = () => {
-  const [role, setRole] = useState(null);
+  const [role, setRole] = useState<Role | null>(null);
   const { setUser } = useAppData();
   const navigate = useNavigate();
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { type IMenuItem, type IRestaurant } from "../types";
 import axios from "axios";
 import { restaurantService } from "../main";

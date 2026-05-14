@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAppData } from "../context/AppContext";
 import { BiCheckCircle } from "react-icons/bi";
@@ -24,7 +24,9 @@ const PaymentSuccess = () => {
         {paymentId && (
           <div className="rounded-lg bg-gray-50">
             <span className="text-gray-500 ">Payment ID: </span>
-            <p className="font-mono break-all text-gray-500 items-center justify-center">{paymentId}</p>
+            <p className="font-mono break-all text-gray-500 items-center justify-center">
+              {paymentId}
+            </p>
           </div>
         )}
         <div className="space-y-2 pt-2">

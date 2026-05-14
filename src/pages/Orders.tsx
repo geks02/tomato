@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { type IOrder } from "../types";
 import { useNavigate } from "react-router-dom";
 import { useSocket } from "../context/SocketContext";

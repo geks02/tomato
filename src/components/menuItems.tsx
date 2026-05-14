@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { IMenuItem } from "../types";
 import { FiEyeOff } from "react-icons/fi";
 import { BsCartPlus, BsEye } from "react-icons/bs";

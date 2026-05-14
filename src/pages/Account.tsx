@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppData } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";

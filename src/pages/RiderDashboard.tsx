@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAppData } from "../context/AppContext";
 import { useSocket } from "../context/SocketContext";
 import { riderService } from "../main";
@@ -7,9 +7,10 @@ import toast from "react-hot-toast";
 import { BiUpload } from "react-icons/bi";
 import type { IOrder } from "../types";
 import audio from "../assets/faaah.mp3";
-import RiderOrderRequest from "../components/RiderOrderRequest";
+
 import RiderCurrentOrder from "../components/riderCurrentOrder";
 import RiderOrderMap from "../components/riderOrderMap";
+import RiderOrderRequest from "../components/riderOrderRequest";
 
 interface IRider {
   _id: string;

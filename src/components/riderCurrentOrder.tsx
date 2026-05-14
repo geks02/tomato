@@ -1,4 +1,3 @@
-import React from "react";
 import type { IOrder } from "../types";
 import axios from "axios";
 import { riderService } from "../main";
