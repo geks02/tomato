@@ -18,7 +18,6 @@ interface IRider {
 
 const RiderDashboard = () => {
   const { user } = useAppData();
-  const { socket } = useSocket();
   const [profile, setProfile] = useState<IRider | null>(null);
   const [loading, setLoading] = useState(true);
   const [toggling, setToggling] = useState(false);
