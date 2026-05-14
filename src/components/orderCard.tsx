@@ -4,6 +4,7 @@ import { ORDER_ACTIONS } from "../utils/orderflow";
 import axios from "axios";
 import { restaurantService } from "../main";
 import toast from "react-hot-toast";
+import Orders from "../pages/Orders";
 
 interface props {
   order: IOrder;
