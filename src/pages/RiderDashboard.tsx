@@ -71,7 +71,7 @@ const RiderDashboard = () => {
       }
       setTimeout(() => {
         setIncomingOrders((prev) => prev.filter((id) => id !== orderId));
-      }, 10000);
+      }, 30000);
     };
 
     socket.on("order:available", onOrderAvailable);
